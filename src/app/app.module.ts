@@ -5,11 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { LoginWrapperComponent } from './components/wrappers/login-wrapper/login-wrapper.component';
+import { LoginViewComponent } from './components/views/login-view/login-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    LoginWrapperComponent,
+    LoginViewComponent
   ],
   imports: [
     BrowserModule,
