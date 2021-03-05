@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { LogIn } from '../../../models/interfaces/interfaces'
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-login-view',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginViewComponent implements OnInit {
 
-  constructor() { }
+  @Output() submitted: EventEmitter<LogIn>
+  loginForm: FormGroup
+
+  constructor() { 
+
+    this.submitted = new EventEmitter();
+
+    this.loginForm = new FormGroup({
+      access_email: new FormControl(''),
+      password: new FormControl(''),
+    }, [])
+
+  }
 
   ngOnInit(): void {
+  }
+
+  onLogIn() {
+    this.submitted.emit(this.loginForm.value);
   }
 
 }

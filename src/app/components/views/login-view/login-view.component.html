@@ -1,1 +1,19 @@
-<p>login-view works!</p>
+<mat-card>
+    <mat-card-content>
+        <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onLogIn()">
+
+            <mat-form-field appareance="standard">
+                <mat-label>Username</mat-label>
+                <input formControlName="access_email" matInput placeholder="Username" type="email">
+            </mat-form-field>
+
+            <mat-form-field appareance="standard">
+                <mat-label>Password</mat-label>
+                <input formControlName="password" matInput placeholder="Password" type="password">
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit" >Log In</button>
+
+        </form>
+    </mat-card-content>
+</mat-card>
