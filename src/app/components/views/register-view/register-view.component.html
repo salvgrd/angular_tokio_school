@@ -1,0 +1,41 @@
+<mat-card class="login-card">
+
+    <mat-card-header>
+        <mat-card-title>Register</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+        <form class="register-form" [formGroup]="registerForm" (ngSubmit)="onRegister()">
+
+            <mat-form-field appareance="standard">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="John Doe" type="text" formControlName="name">
+            </mat-form-field>
+
+            <mat-form-field appareance="standard">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="example@email.com" type="email" formControlName="access_email">
+            </mat-form-field>
+
+            <mat-form-field appareance="standard">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Somthing safe!" type="password" formControlName="password">
+            </mat-form-field>
+
+            <mat-form-field appareance="fill">
+                <mat-label>User type</mat-label>
+                <mat-select formControlName="type">
+                    <mat-option value="user">Customer</mat-option>
+                    <mat-option value="provider">Provider</mat-option>
+                    <mat-option value="admin">Developer !! TO BE REMOVED</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <div class="card-buttons">
+                <button mat-raised-button color="primary" type="submit">Register</button>
+            </div>
+
+        </form>
+    </mat-card-content>
+
+</mat-card>
