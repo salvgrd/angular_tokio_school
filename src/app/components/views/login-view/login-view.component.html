@@ -1,4 +1,9 @@
-<mat-card>
+<mat-card class="login-card">
+
+    <mat-card-header>
+        <mat-card-title>User access</mat-card-title>
+    </mat-card-header>
+
     <mat-card-content>
         <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onLogIn()">
 
@@ -12,8 +17,12 @@
                 <input formControlName="password" matInput placeholder="Password" type="password">
             </mat-form-field>
 
-            <button mat-raised-button color="primary" type="submit" >Log In</button>
+            <div class="card-buttons">
+                <button mat-stroked-button color="primary" (click)="goToRegister($event)" >Register</button>
+                <button mat-raised-button color="primary" type="submit" >Log In</button>
+            </div>
 
         </form>
     </mat-card-content>
+
 </mat-card>
