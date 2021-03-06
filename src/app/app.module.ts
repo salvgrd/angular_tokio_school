@@ -15,13 +15,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { LoginWrapperComponent } from './components/wrappers/login-wrapper/login-wrapper.component';
 import { LoginViewComponent } from './components/views/login-view/login-view.component';
+import { RegisterPageComponent } from './pages/register-page/register-page/register-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
     LoginWrapperComponent,
-    LoginViewComponent
+    LoginViewComponent,
+    RegisterPageComponent
   ],
   imports: [
     HttpClientModule,
