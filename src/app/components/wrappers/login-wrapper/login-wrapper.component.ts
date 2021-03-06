@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { LogInService } from '../../../services/log-in/log-in.service'
 
 @Component({
@@ -9,7 +9,10 @@ import { LogInService } from '../../../services/log-in/log-in.service'
 
 export class LoginWrapperComponent implements OnInit {
 
+  @Output() navigate: EventEmitter<string>
+  
   constructor(private logInService: LogInService) {
+    this.navigate = new EventEmitter()
   }
 
   ngOnInit(): void {
@@ -22,6 +25,10 @@ export class LoginWrapperComponent implements OnInit {
 
   handleResponse(response: any) {
     console.log(response)
+  }
+
+  goToPage(page: string) {
+    this.navigate.emit(page)
   }
 
 }
